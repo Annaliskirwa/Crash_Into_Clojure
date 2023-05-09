@@ -27,6 +27,9 @@
     (println all))
   )
 
+(defn try-this
+  [variable [[1 2 3]]])
+
 (defn -main
   []
   (destructure))
