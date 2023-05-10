@@ -39,6 +39,7 @@
   [{:keys [name age city] :as args}
    [first-choice second-choice & unimportant-choices]]
   ;[{:keys [name age city] :as args}]
+  (println (str "My name is: " name))
   (println (str "Your first choice is: " first-choice))
   (println (str "Your second choice is: " (clojure.string/capitalize second-choice)))
   (println (str "We're ignoring the rest of your choices. "
@@ -49,6 +50,7 @@
 (defn other-fn
   "docstring"
   [{:keys [name city] :as args} b]
+  (println "I am" b " as " name " from " city)
   )
 (other-fn {:name "Annalis" :age 25 :city "Nairobi"} "me")
 
@@ -56,11 +58,20 @@
   [{lat :lat lng :lng}]
   (println (str "Treasure lat: " lat))
   (println (str "Treasure lng: " lng)))
+
+(defn announce-treasure-location1
+  [{:keys [lat lng] :as args}]
+  (println (str "Treasure lat: " lat))
+  (println (str "Treasure lng: " lng)))
+
+(def my-map {:name "Annalis" :age 25 :city "Nairobi"})
 (defn -main
   []
   (destructure)
   (my-first ["Annalis" "Kirwa"])
-  (println (str "----The next method---" (:name chooser)))
+  (println (str "----The next method called by: ---" (:name my-map)))
   (chooser {:name "Annalis" :age 25 :city "Nairobi"} ["a" "b" "c" "d" "e"])
+  (other-fn {:name "Annalis" :age 25 :city "Nairobi"} "me")
   (announce-treasure-location{:lat 28.22 :lng 81.33})
+  (announce-treasure-location1{:lat 12345 :lng 7890})
   )
