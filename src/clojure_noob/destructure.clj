@@ -62,7 +62,9 @@
 (defn announce-treasure-location1
   [{:keys [lat lng] :as args}]
   (println (str "Treasure lat: " lat))
-  (println (str "Treasure lng: " lng)))
+  (println (str "Treasure lng: " lng))
+  (println (str "Lets see what the args do: " (args :lat)))
+  (println (str "Lets see what the args do: " (args :lng))))
 
 (def my-map {:name "Annalis" :age 25 :city "Nairobi"})
 (defn -main
