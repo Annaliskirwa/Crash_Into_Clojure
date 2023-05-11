@@ -19,10 +19,19 @@
 (def anonymous_function
   (fn [name] (println (str "Hi " name "!. How are you"))))
 
+;returning functions
+(defn inc-maker
+  "Create a custom incrementor"
+  [inc-by]
+ #(+ % inc-by))
+
+(def inc3 (inc-maker 3))
+
 (defn -main
   []
   (x-chop "Annalis" "slap")
   (favorite-things "Annalis" "iphone" "mac" "ipad")
   (number-comment 7)
   (anonymous_function "Anna")
+  (println (str "The answer is: " (inc3 7)))
   )
