@@ -10,7 +10,15 @@
   (println (str "Hi " name " here are my favorite things: "
                   (clojure.string/join "," things))))
 
+(defn number-comment
+  [x]
+  (if (> x 6)
+    "Oh my gosh! What a big number!"
+    "That number's OK, I guess"))
+
 (defn -main
   []
   (x-chop "Annalis" "slap")
-  (favorite-things "Annalis" "iphone" "mac" "ipad"))
+  (favorite-things "Annalis" "iphone" "mac" "ipad")
+  (number-comment 7)
+  )

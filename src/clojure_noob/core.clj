@@ -22,6 +22,10 @@
 
 (def my-map {:name "Annalis" :age 25 :city "Nairobi"})
 
+(defn hello []
+  "Goodbye, Mars!"
+  (println (str "\"Hello, World!\"")))
+
 (defn conditionals [name]
   (if true
     (println (str "Hello, " (:name my-map)))
@@ -35,6 +39,7 @@
   (let [person (create-person)]
     (print-person person))
   (conditionals :Annalis)
+  (hello)
 
   )
 
