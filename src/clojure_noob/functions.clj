@@ -27,6 +27,17 @@
 
 (def inc3 (inc-maker 3))
 
+(defn trying-loops
+  []
+  (loop [iteration 0]
+    (println (str "Iteration " iteration))
+    (if (> iteration 3)
+      (println "Goodbye!")
+      (recur (inc iteration))
+      )
+    )
+  )
+
 (defn -main
   []
   (x-chop "Annalis" "slap")
@@ -34,4 +45,5 @@
   (number-comment 7)
   (anonymous_function "Anna")
   (println (str "The answer is: " (inc3 7)))
+  (trying-loops)
   )
