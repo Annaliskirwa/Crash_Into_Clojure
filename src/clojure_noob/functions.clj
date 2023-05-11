@@ -16,9 +16,13 @@
     "Oh my gosh! What a big number!"
     "That number's OK, I guess"))
 
+(def anonymous_function
+  (fn [name] (println (str "Hi " name "!. How are you"))))
+
 (defn -main
   []
   (x-chop "Annalis" "slap")
   (favorite-things "Annalis" "iphone" "mac" "ipad")
   (number-comment 7)
+  (anonymous_function "Anna")
   )

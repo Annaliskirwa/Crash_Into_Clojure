@@ -26,11 +26,11 @@
   "Goodbye, Mars!"
   (println (str "\"Hello, World!\"")))
 
-(defn conditionals [name]
+(defn conditionals []
   (if true
     (println (str "Hello, " (:name my-map)))
     (println (str "Never see this")))
-  (  when true
+    (when true
     (println "Success")))
 
 (defn -main []
@@ -38,7 +38,7 @@
   (error-message :mild)
   (let [person (create-person)]
     (print-person person))
-  (conditionals :Annalis)
+  (conditionals)
   (hello)
 
   )
